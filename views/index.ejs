@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/css/buttons.css">
+    <link rel="stylesheet" href="/public/css/skel.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="/public/css/all.css">
+    <link rel="stylesheet" href="/public/css/fonts.css">
+    <link rel="stylesheet" href="/public/css/fontawesome.css">
+    <title>Log In | sign in to your scuda account</title>
+</head>
+<body>
+    <img src="./" alt="">
+    <div class="heading"><h2>sign in to your account</h2></div>
+    <form id="form" action="/login" method="post">
+        <div class="input">
+            <p id="username-warning"></p>
+            <input type="text" name="username" id="username" placeholder="Username">
+        </div>
+        <div class="input">
+            <p id="password-warning"></p>
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <input id="submit" type="submit" class="submit" value="Log In">
+        <div class="login"><a href="/signup">Don't have an account?</a></div>
+    </form>
+    <script>
+        // document.getElementById('submit').addEventListener("click", send);
+
+        // function validate(){
+        //     let valid = true;
+        //     if(document.getElementById("username").value == ""){
+        //         valid = false;
+        //         document.getElementById('username-warning').innerHTML = '* please enter a username </br>';
+        //     }
+        //     if(password.value.length == ""){
+        //         valid = false;
+        //         document.getElementById('password-warning').innerHTML = '* please fill in this  field </br>';
+        //     }
+        //     return valid;
+        // }
+        // function send(e){
+        //     e.preventDefault();
+        //     e.stopPropagation();
+        //     let status = validate();
+        //     if(status == true){
+        //         document.getElementsByTagName('form').submit();
+        //     }
+        // }
+    </script>
+</body>
+</html>

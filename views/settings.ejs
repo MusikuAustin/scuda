@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/css/buttons.css">
+    <link rel="stylesheet" href="/public/css/skel.css">
+    <link rel="stylesheet" href="/public/css/profile.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--<h3>welcome</h3>
+    <a href="/logout" class="logout">logout</a>-->
+    <section class="landing">
+        <nav id="nav">
+            <div class="logo">scuda</div>
+            <ul>
+                <li><a href="/home">home</a></li>
+                <li><a href="/profile">profile</a></li>
+                <li><a href="/settings">settings</a></li>
+                <li><a href="/logout">logout</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="section-hero">
+        <h1>settings</h1>
+        
+        </section>
+        <script>
+            let follow = document.querySelector('.follow-btn');
+            let unfollow = document.querySelector('.unfollow-btn');
+
+            follow.addEventListener('click', (e) => {
+                e.preventDefault();
+                // console.log(follow.parentElement.childNodes[3].innerHTML);
+                let followed = follow.parentElement.childNodes[3].innerHTML;
+            
+                $.ajax({
+                    type: 'POST',
+                    url: '/follow',
+                    contentType: 'application/json',
+                    data: JSON.stringify({followed: followed}),
+                    success: (data)=>{
+                        console.log(data);
+                        parsedData = JSON.parse(data);
+                        console.log(parsedData.newfollowing);
+                        if(parsedData.newfollowing){
+                            document.getElementById('fans-number').innerHTML = parsedData.newfollowing;
+                        }else{
+                            document.getElementById('fans-number').innerHTML = document.getElementById('fans-number').innerHTML;
+                        }
+                    }
+                })
+            })
+
+            unfollow.addEventListener('click', () => {
+                console.log('unfollowed! ');
+            })
+
+        </script>
+        <script src="/public/js/jquery-3.3.1.js"></script>
+    </body>
+    </html>
