@@ -10,7 +10,7 @@ const fileUpload = require('express-fileupload');
 const app = express();
 
 // SETUP SERVER
-let port = 3000;
+let port = process.env.PORT || 3000;
 app.listen(port, ()=>{
     console.log('node3 server listening to port 3000');
 })
