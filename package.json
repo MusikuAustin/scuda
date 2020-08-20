@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/express-fileupload": "^1.1.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
